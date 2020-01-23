@@ -105,21 +105,23 @@ namespace GrafFeladat_CSharp
 
         public void melysegBejar(int kezdoPont)
         {
-            bool[] bejart = new bool[csucsokSzama];
-            Stack<int> stack = new Stack<int>();
-            bejart[kezdoPont] = true;
-            stack.Push(kezdoPont);
-            while (stack.Count != 0)
+            //bool[] bejart = new bool[csucsokSzama];
+            List<int> bejart = new List<int>();
+            //bejart[kezdoPont] = true;
+            bejart.Add(kezdoPont);
+            
+            
+        }
+
+        public void meylsegrekrz(int KezdoPont, List<int> marbejart)
+        {
+            Console.WriteLine(this.csucsok[KezdoPont]);
+            foreach (var item in this.elek)
             {
-                kezdoPont = stack.Pop();
-                Console.WriteLine("következő -> " + kezdoPont);
-                foreach (int i in )
+                if (true)
                 {
-                    if (!bejart[i])
-                    {
-                        bejart[i] = true;
-                        stack.Push(i);
-                    }
+                    marbejart.Add();
+                    this.meylsegrekrz();
                 }
             }
         }
