@@ -20,6 +20,11 @@ namespace GrafFeladat_CSharp
             graf.Hozzaad(4, 5);
             graf.Hozzaad(2, 4);
 
+            graf.szelessegiBejar(1);
+
+            var mst = graf.MinimumSpanningTreePrim(e => e.Tag).ToList();
+
+
             Console.WriteLine(graf);
             Console.ReadLine();
         }

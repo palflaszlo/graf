@@ -78,5 +78,82 @@ namespace GrafFeladat_CSharp
             }
             return str;
         }
+
+
+
+        public void szelessegiBejar(int kezdoPont)
+        {
+            bool[] bejart = new bool[csucsokSzama];
+            Stack<int> stack = new Stack<int>();
+            bejart[kezdoPont] = true;
+            stack.Push(kezdoPont);
+            while(stack.Count != 0)
+            {
+                kezdoPont = stack.Pop();
+                Console.WriteLine("következő -> " + kezdoPont);
+                foreach (int i in )
+                {
+                    if (!bejart[i])
+                    {
+                        bejart[i] = true;
+                        stack.Push(i);
+                    }
+                }
+            }
+        }
+
+
+        public void melysegBejar(int kezdoPont)
+        {
+            bool[] bejart = new bool[csucsokSzama];
+            Stack<int> stack = new Stack<int>();
+            bejart[kezdoPont] = true;
+            stack.Push(kezdoPont);
+            while (stack.Count != 0)
+            {
+                kezdoPont = stack.Pop();
+                Console.WriteLine("következő -> " + kezdoPont);
+                foreach (int i in )
+                {
+                    if (!bejart[i])
+                    {
+                        bejart[i] = true;
+                        stack.Push(i);
+                    }
+                }
+            }
+        }
+
+
+        public void osszefuggoseg()
+        {
+            for (int i = 0; i < Aristas.GetLength(0); i++)
+            {
+                // Assume it's not connected unless shown otherwise.
+                bool nodeIsConnected = false;
+
+                // Check the column and row at the same time:
+                for (int j = 0; j < Aristas.GetLength(1); j++)
+                {
+                    if (Aristas[i, j] != 0 || Aristas[j, i] != 0)
+                    {
+                        // It was non-zero; must have at least one connection.
+                        nodeIsConnected = true;
+                        break;
+                    }
+                }
+
+                // Is the current node connected?
+                if (!nodeIsConnected)
+                {
+                    return false;
+                }
+
+            }
+
+            // All ok otherwise:
+            return true;
+        }
+
     }
 }
